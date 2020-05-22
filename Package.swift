@@ -5,6 +5,9 @@ import PackageDescription
 
 let package = Package(
     name: "Moya-ObjectMapper",
+    platforms: [
+    .macOS(.v10_10), .iOS(.v10), .tvOS(.v9), .watchOS(.v3)
+    ],
     products: [
         .library(name: "Moya-ObjectMapper", targets: ["Moya-ObjectMapper"]),
         .library(name: "Moya-RxSwift-ObjectMapper", targets: ["Moya-RxSwift-ObjectMapper"]),
