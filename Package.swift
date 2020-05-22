@@ -16,7 +16,8 @@ let package = Package(
     dependencies: [
         .package(url: "https://github.com/Moya/Moya.git", .upToNextMajor(from: "14.0.0")),
         .package(url: "https://github.com/tristanhimmelman/ObjectMapper.git", .upToNextMajor(from: "4.2.0")),
-        .package(url: "https://github.com/ReactiveX/RxSwift.git", .upToNextMajor(from: "5.1.1"))
+        .package(url: "https://github.com/ReactiveX/RxSwift.git", .upToNextMajor(from: "5.1.1")),
+        .package(url: "https://github.com/ReactiveCocoa/ReactiveSwift.git", .upToNextMajor(from: "6.2.1"))
     ],
     targets: [
         .target(
@@ -35,6 +36,16 @@ let package = Package(
                 "ObjectMapper",
                 "RxSwift"],
             path: "Source/RxSwift",
+            exclude: [
+                "Sample"]),
+        .target(
+            name: "Moya-ReactiveSwift-ObjectMapper",
+            dependencies: [
+                "Moya",
+                "ReactiveMoya",
+                "ObjectMapper",
+                "ReactiveSwift"],
+            path: "Source/ReactiveSwift",
             exclude: [
                 "Sample"])
     ]
